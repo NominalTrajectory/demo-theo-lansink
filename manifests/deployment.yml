@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: nominaltrajectorydemotheolansink 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nominaltrajectorydemotheolansink
+  template:
+    metadata:
+      labels:
+        app: nominaltrajectorydemotheolansink 
+    spec:
+      containers:
+        - name: nominaltrajectorydemotheolansink 
+          image: snapshotapp.azurecr.io/nominaltrajectorydemotheolansink
+          ports:
+          - containerPort: 80
